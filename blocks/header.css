@@ -1,0 +1,16 @@
+.header {
+  padding-top: 34px;
+  text-align: center;
+}
+.header__icon {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}
+.header__caption {
+  margin-top: 8px; /* separación entre icono y texto (grupo 12 ≈ 14.94px de alto) */
+  font-size: 14px;
+  line-height: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}

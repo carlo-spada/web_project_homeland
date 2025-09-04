@@ -1,0 +1,26 @@
+.lead {
+  width: var(--container);
+  margin: 194px auto 0; /* posición top del grupo lead en Figma */
+  text-align: center;
+}
+.lead__title {
+  margin: 0;
+  font-weight: 900; /* Inter Black */
+  font-size: 96px;
+  line-height: 100px;
+}
+.lead__subtitle {
+  margin: 32px auto 0;
+  max-width: 720px;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+}
+.lead__image {
+  display: block;
+  width: 100%;
+  height: 615px; /* tamaño exacto del brief */
+  object-fit: cover;
+  margin: 136px 0 0; /* separación hasta la foto según layout */
+  border: 0;
+}

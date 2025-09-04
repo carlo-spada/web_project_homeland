@@ -1,0 +1,10 @@
+.footer {
+  width: var(--container);
+  margin: 80px auto 24px;
+  text-align: center;
+}
+.footer__copyright {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
