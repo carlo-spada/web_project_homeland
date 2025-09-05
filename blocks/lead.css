@@ -1,59 +1,39 @@
+/* blocks/lead.css — fluid with clamp(), no media queries */
 .lead {
-  width: var(--container);
-  margin: 194px auto 0; /* posición top del grupo lead en Figma */
+  max-width: 61.5rem; /* 984px */
+  width: 100%;
+  margin-inline: auto;
+  display: grid;
+  row-gap: clamp(1.5rem, 2.5vw, 1.5rem); /* ~24px */
+  color: #fff;
   text-align: center;
+  padding-inline: 0; /* evita doble “gutter”; lo aporta .page */
 }
+
 .lead__title {
   margin: 0;
-  font-weight: 900; /* Inter Black */
-  font-size: 96px;
-  line-height: 100px;
+  max-width: clamp(14.25rem, 56.25vw, 45rem); /* 228 → 720 */
+  font-weight: 900;
+  font-size: clamp(2.5rem, 7.5vw, 6rem); /* 40 → 96 */
+  line-height: clamp(2.75rem, 7.9vw, 6.25rem); /* 44 → 100 */
+  margin-inline: auto;
 }
+
 .lead__subtitle {
-  margin: 32px auto 0;
-  max-width: 720px;
+  margin: 0;
+  max-width: clamp(18rem, 56.25vw, 45rem); /* 288 → 720 */
   font-weight: 400;
-  font-size: 30px;
-  line-height: 36px;
+  font-size: clamp(1rem, 2.5vw, 1.875rem); /* 16 → 30 */
+  line-height: clamp(1.25rem, 3vw, 2.25rem); /* 20 → 36 */
+  margin-inline: auto;
 }
+
 .lead__image {
   display: block;
   width: 100%;
-  height: 615px; /* tamaño exacto del brief */
+  max-width: 61.5rem; /* casa con el bloque */
+  height: auto;
+  aspect-ratio: 984 / 615;
   object-fit: cover;
-  margin: 136px 0 0; /* separación hasta la foto según layout */
-  border: 0;
-}
-/* Tablet 768 — 545–1024 */
-@media (min-width: 545px) and (max-width: 1024px) {
-  .lead {
-    max-width: 768px;
-    margin: 0 auto;
-    padding: 0 24px; /* hace 720px de contenido */
-    text-align: center;
-  }
-
-  .lead__title {
-    max-width: 530px; /* 530 */
-    margin: 186px auto 0; /* top ≈ 186 */
-    font-size: 75px; /* 75/79 */
-    line-height: 79px;
-    font-weight: 900;
-  }
-
-  .lead__subtitle {
-    max-width: 720px; /* 720 */
-    margin: 24px auto 0; /* separación ≈ 24–25 */
-    font-size: 30px; /* 30/36 */
-    line-height: 36px;
-    font-weight: 400;
-  }
-
-  /* Imagen a sangrado completo (768 de ancho) respetando gutters de 24px */
-  .lead__image {
-    display: block;
-    width: calc(100% + 48px); /* 24px a cada lado */
-    margin: 30px -24px 0; /* gap ≈ 30 */
-    height: auto;
-  }
+  object-position: center;
 }

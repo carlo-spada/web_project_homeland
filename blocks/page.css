@@ -1,0 +1,49 @@
+/* blocks/page.css */
+
+/* Fallbacks first (for engines without logical props/min()) */
+.page {
+  min-height: 100%;
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 0 auto;
+
+  /* fluid spacing via tokens */
+  padding-top: var(--pt-fluid);
+  padding-bottom: var(--pb);
+  padding-left: var(--gutter-fluid);
+  padding-right: var(--gutter-fluid);
+
+  background: var(--page-bg);
+  color: #fff;
+  font-family: "Inter", Arial, sans-serif;
+
+  display: grid;
+  row-gap: var(--gap-fluid);
+}
+
+/* Prefer modern logical properties when available */
+@supports (width: min(100%, 1px)) {
+  .page {
+    width: min(100%, var(--page-max));
+  }
+}
+@supports (padding-block: 1rem) {
+  .page {
+    padding-inline: var(--gutter-fluid);
+    padding-block: var(--pt-fluid) var(--pb);
+  }
+}
+
+/* Optional breakpoints only if you still want hard steps */
+@media (max-width: 64em) {
+  /* ≤1024 */
+  .page {
+    row-gap: var(--gap-fluid);
+  } /* already fluid; keep for clarity only */
+}
+@media (max-width: 34em) {
+  /* ≤544 */
+  .page {
+    row-gap: var(--gap-fluid);
+  }
+}

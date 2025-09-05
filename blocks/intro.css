@@ -1,75 +1,53 @@
+/* blocks/intro.css — fluid with clamp(); 1 MQ solo para alinear a la izquierda ≥64em */
+
 .intro {
-  width: var(--container);
-  margin: 64px auto 0;
+  display: grid;
+  gap: clamp(1.5rem, 3.5vw, 1.5rem); /* ~24px */
+  color: #fff;
+  width: 100%;
+  max-width: clamp(18rem, 70vw, 45rem); /* 288 → 720 */
+  margin-inline: auto; /* centrado <1024 */
+  padding-top: clamp(1.5rem, 6vw, 5.625rem); /* 24 → 90 */
+  padding-inline: 0; /* el “gutter” lo aporta .page */
 }
+
 .intro__title {
-  width: 830px;
-  margin: 0 0 24px 0;
-  font-weight: 900;
-  font-size: 54px;
-  line-height: 58px;
-}
-.intro__text {
-  width: 738px; /* 738 / 732 según párrafo */
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 34px;
   margin: 0;
+  font-weight: 900;
+  font-size: clamp(2rem, 4.5vw, 3.375rem); /* 32 → 54 */
+  line-height: clamp(2.1875rem, 4.8vw, 3.625rem); /* 35 → 58 */
 }
+
+.intro__text {
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3.8vw, 1.5rem); /* 24 */
+  line-height: clamp(1.875rem, 3.8vw, 2.125rem); /* 30 → 34 */
+  max-width: clamp(100%, 70vw, 46.125rem); /* hasta 738 */
+}
+
 .intro__quote {
-  width: 732px;
-  margin: 16px 0 0 0;
+  margin: 0;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 34px;
+  font-size: clamp(1.5rem, 3.8vw, 1.5rem); /* 24 */
+  line-height: clamp(2.125rem, 4vw, 2.125rem); /* 34 */
   text-align: right;
+  max-width: clamp(100%, 70vw, 45.75rem); /* hasta 732 */
+  margin-left: auto;
 }
+
 .intro__note {
-  width: 722px;
-  margin: 48px 0 0 0;
+  margin: 0;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem; /* 16 */
   line-height: 1.63; /* 163% */
+  max-width: clamp(100%, 70vw, 45.125rem); /* hasta 722 */
 }
-/* Tablet 768 — 545–1024 */
-@media (min-width: 545px) and (max-width: 1024px) {
+
+/* Desktop ≥1024px: ancho y alineación a la izquierda según Figma */
+@media (min-width: 64em) {
   .intro {
-    max-width: 768px;
-    margin: 90px auto 0; /* desde la imagen: ~90 */
-    padding: 0 24px; /* 720 de contenido */
-    color: #fff;
-  }
-
-  .intro__title {
-    max-width: 707px; /* 707 */
-    font-size: 45px; /* 45/49 */
-    line-height: 49px;
-    font-weight: 900;
-  }
-
-  /* primer párrafo (24/34) */
-  .intro__text {
-    max-width: 720px;
-    margin-top: 50px; /* ~50 desde el título */
-    font-size: 24px;
-    line-height: 34px;
-    font-weight: 400;
-  }
-
-  /* cita — Joseph Beuys (24/34, alineado a la derecha) */
-  .intro__quote {
-    margin-top: 30px;
-    font-size: 24px;
-    line-height: 34px;
-    font-weight: 400;
-    text-align: right;
-  }
-
-  /* párrafo largo final (16 / 163%) */
-  .intro__paragraph {
-    margin-top: 66px; /* ~64–66 */
-    font-size: 16px;
-    line-height: 1.63;
-    font-weight: 400;
+    max-width: 51.875rem; /* 830 */
+    margin-left: clamp(0rem, calc((100% - 61.5rem) / 2), 9.25rem);
   }
 }

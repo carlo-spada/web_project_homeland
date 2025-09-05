@@ -1,25 +1,24 @@
+/* blocks/footer.css */
 .footer {
-  width: var(--container);
-  margin: 80px auto 24px;
-  text-align: center;
-}
-.footer__copyright {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-}
-/* Tablet 768 — 545–1024 */
-@media (min-width: 545px) and (max-width: 1024px) {
-  .footer {
-    max-width: 768px;
-    margin: 58px auto 0; /* desde el párrafo largo a ~1702 top */
-    padding: 0 24px;
-    text-align: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 
-  .footer__copyright {
-    font-size: 14px; /* 14/16 */
-    line-height: 16px;
-    font-weight: 400;
-  }
+  /* fluido y limitado a 800px en desktop */
+  width: 100%;
+  max-width: clamp(18rem, 62.5vw, 50rem); /* 288 → 800 */
+  margin-inline: auto;
+
+  /* respiración y separación inferior */
+  padding-inline: var(--gutter);
+  padding-block-end: clamp(1rem, 2vw, 1.5625rem); /* ~16 → 25 */
+  color: #fff;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(0.8125rem, 1.2vw, 0.875rem); /* 13 → 14 */
+  line-height: 1rem; /* 16 */
+  text-align: center;
 }
