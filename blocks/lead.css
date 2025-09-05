@@ -24,3 +24,36 @@
   margin: 136px 0 0; /* separación hasta la foto según layout */
   border: 0;
 }
+/* Tablet 768 — 545–1024 */
+@media (min-width: 545px) and (max-width: 1024px) {
+  .lead {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 24px; /* hace 720px de contenido */
+    text-align: center;
+  }
+
+  .lead__title {
+    max-width: 530px; /* 530 */
+    margin: 186px auto 0; /* top ≈ 186 */
+    font-size: 75px; /* 75/79 */
+    line-height: 79px;
+    font-weight: 900;
+  }
+
+  .lead__subtitle {
+    max-width: 720px; /* 720 */
+    margin: 24px auto 0; /* separación ≈ 24–25 */
+    font-size: 30px; /* 30/36 */
+    line-height: 36px;
+    font-weight: 400;
+  }
+
+  /* Imagen a sangrado completo (768 de ancho) respetando gutters de 24px */
+  .lead__image {
+    display: block;
+    width: calc(100% + 48px); /* 24px a cada lado */
+    margin: 30px -24px 0; /* gap ≈ 30 */
+    height: auto;
+  }
+}

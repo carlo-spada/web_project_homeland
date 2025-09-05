@@ -8,3 +8,18 @@
   font-size: 14px;
   line-height: 16px;
 }
+/* Tablet 768 — 545–1024 */
+@media (min-width: 545px) and (max-width: 1024px) {
+  .footer {
+    max-width: 768px;
+    margin: 58px auto 0; /* desde el párrafo largo a ~1702 top */
+    padding: 0 24px;
+    text-align: center;
+  }
+
+  .footer__copyright {
+    font-size: 14px; /* 14/16 */
+    line-height: 16px;
+    font-weight: 400;
+  }
+}
