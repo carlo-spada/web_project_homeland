@@ -4,6 +4,7 @@
   --pg-gap: clamp(0.75rem, 2.5vw, 1rem); /* gap fluido 12–16px */
 
   width: min(100%, 73rem);
+  padding: 5.625rem;
   margin-inline: auto;
   padding-inline: var(--gutter); /* usa tu gutter global */
   display: grid;
