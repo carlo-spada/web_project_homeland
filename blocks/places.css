@@ -1,0 +1,139 @@
+/* Contenedor de sección */
+.places {
+  display: grid;
+  gap: clamp(2rem, 6vw, 5.625rem); /* distancia entre places */
+  padding-inline: var(--gutter);
+}
+
+/* ---- Estructura del bloque ---- */
+/* Mobile-first: 320 — orden requerido: title → artists → image → text → btn */
+.place {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "artists"
+    "image"
+    "text"
+    "cta";
+  gap: 1.5rem; /* 24 */
+  color: #fff;
+  max-width: var(--page-max);
+  margin-inline: auto;
+}
+.place__title {
+  grid-area: title;
+  margin: 0;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 35px;
+}
+.place__artists {
+  grid-area: artists;
+  display: grid;
+  gap: 0.5rem;
+}
+.place__artists-label {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9aa0a6;
+}
+.place__artists-names {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.63;
+}
+
+.place__image {
+  grid-area: image;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  box-shadow: none; /* sin sombra en 320 */
+}
+
+.place__text {
+  grid-area: text;
+  display: grid;
+  gap: 1.5rem;
+}
+.place__text p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.63;
+}
+
+.place__btn {
+  grid-area: cta;
+  justify-self: start;
+  margin-top: clamp(2rem, 6vw, 3rem); /* ≈48px en desktop */
+  padding: 0.875rem 1.25rem;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  background: linear-gradient(90deg, #0278fe 0%, #003a7b 99.98%);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transition: filter 0.2s ease, transform 0.1s ease;
+}
+.place__btn:hover {
+  filter: brightness(1.06);
+}
+.place__btn:active {
+  transform: translateY(1px);
+}
+
+/* ---- ≥544px (tablet) ---- */
+@media (min-width: 34em) {
+  .place {
+    grid-template-columns: 21.25rem 1fr; /* 340 + texto */
+    grid-template-areas:
+      "title   title"
+      "image   artists"
+      "image   text"
+      "cta     text";
+    column-gap: clamp(1.5rem, 3vw, 2.5rem);
+    align-items: center;
+    padding: clamp(1.5rem, 3vw, 2rem) 1rem;
+  }
+  .place__title {
+    font-size: 45px;
+    line-height: 49px;
+  }
+
+  .place__artists-names {
+    font-size: 16px;
+  }
+  .place__text p {
+    font-size: 16px;
+  }
+
+  .place__image {
+    box-shadow: 10px 10px 25px #00000080;
+  }
+}
+
+/* ---- ≥1024px (desktop) ---- */
+@media (min-width: 64em) {
+  .place {
+    grid-template-columns: 28.75rem 1fr; /* 460 + texto */
+    column-gap: clamp(2rem, 3.4vw, 2.75rem);
+  }
+  .place__title {
+    font-size: 72px;
+    line-height: 76px;
+  }
+
+  .place__artists-names {
+    font-size: 18px;
+  }
+  .place__text p {
+    font-size: 18px;
+  }
+}

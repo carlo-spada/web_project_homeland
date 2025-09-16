@@ -1,0 +1,35 @@
+/* Bloque: photo-grid (BEM plano) */
+.photo-grid {
+  /* 73rem ≈ 1168px → con gap ≈16px da items ~280px en desktop */
+  --pg-gap: clamp(0.75rem, 2.5vw, 1rem); /* gap fluido 12–16px */
+
+  width: min(100%, 73rem);
+  padding: 5.625rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter); /* usa tu gutter global */
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: 1 columna */
+  gap: var(--pg-gap);
+}
+
+.photo-grid__item {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* ~280×210 */
+  object-fit: cover;
+  display: block;
+}
+
+/* tablet ≥544px (34em): 2 columnas */
+@media (min-width: 34em) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 0; /* como en otros bloques */
+  }
+}
+
+/* desktop ≥1024px (64em): 4 columnas (2 filas x 4 col) */
+@media (min-width: 64em) {
+  .photo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
