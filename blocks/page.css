@@ -4,6 +4,7 @@
 .page {
   min-height: 100%;
   width: 100%;
+  min-width: --page-min;
   max-width: var(--page-max);
   margin: 0 auto;
 

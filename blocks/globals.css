@@ -3,7 +3,8 @@
 /* --- static tokens (fallbacks if clamp isn't supported) --- */
 :root {
   --page-bg: #2a2c2f;
-  --page-max: 80rem; /* 1280px */
+  --page-max: 2400px;
+  --page-min: 300px
 
   /* fixed (design) values */
   --gap-mobile: 3rem; /* 48px  */
